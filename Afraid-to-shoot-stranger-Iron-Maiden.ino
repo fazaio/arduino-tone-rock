@@ -91,3 +91,63 @@
 #define NOTE_CS8 4435
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
+
+int melody[] = {
+  NOTE_CS4, NOTE_FS4, NOTE_GS4, NOTE_A4, NOTE_GS4, NOTE_FS4, NOTE_A4,
+  NOTE_FS4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4,
+  NOTE_E4, NOTE_GS4, NOTE_A4, NOTE_B4,
+  NOTE_E4, NOTE_GS4, NOTE_A4, NOTE_B4,
+  NOTE_A4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4,
+  NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_B4, NOTE_A4, NOTE_FS4, NOTE_GS4,
+  NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4,
+  NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_B4, NOTE_A4, NOTE_FS4, NOTE_GS4,
+  NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4,
+  NOTE_CS4, NOTE_FS4, NOTE_GS4, NOTE_A4, NOTE_GS4, NOTE_FS4, NOTE_A4,
+  NOTE_FS4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4,
+  NOTE_E4, NOTE_GS4, NOTE_A4, NOTE_B4,
+  NOTE_E4, NOTE_GS4, NOTE_A4, NOTE_B4,
+  NOTE_A4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4
+};
+
+// note durations: 4 = quarter note, 8 = eighth note, etc.:
+int noteDurations[] = {
+  8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8,
+  8, 8, 8, 8,
+  8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8, 10, 8, 8, 4,
+  8,8,8,8,8,16,8,8,8,4,
+
+  4, 4, 4, 4, 8, 4, 4, 2,
+  4,4,4,4,4,12,4,4,4,6,
+  8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8, 8, 8, 4,
+  8, 8, 8, 8,
+  8, 8, 8, 8,
+  8, 8, 8, 8, 8, 8, 1
+};
+
+void setup() {
+  // iterate over the notes of the melody:
+  for (int thisNote = 0; thisNote < 94; thisNote++) {
+
+    // to calculate the note duration, take one second divided by the note type.
+    //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+    int noteDuration = 1000 / noteDurations[thisNote];
+    tone(8, melody[thisNote], noteDuration);
+
+    // to distinguish the notes, set a minimum time between them.
+    // the note's duration + 30% seems to work well:
+    int pauseBetweenNotes = noteDuration * 1.30;
+    delay(pauseBetweenNotes);
+    // stop the tone playing:
+    noTone(8);
+  }
+}
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
