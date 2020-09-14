@@ -1,5 +1,5 @@
 /*************************************************
- * Iron maiden - Afraid To Shoot Stranger (Short Melody)
+ * Iron maiden - The Troopers (Short Melody)
  * Visit: https://github.com/fazaio/arduino-tone
  *************************************************/
 
@@ -95,66 +95,22 @@
 #define ConfigPiezzoPin 8
 
 int melody[] = {
-  NOTE_CS4, NOTE_FS4, NOTE_GS4, NOTE_A5, NOTE_GS4, NOTE_FS4, NOTE_A5,
-  NOTE_FS4, NOTE_A5, NOTE_B5, NOTE_CS5, NOTE_B5, NOTE_A5, NOTE_B5,
-  NOTE_E4, NOTE_GS4, NOTE_A5, NOTE_B5,
-  NOTE_E4, NOTE_GS4, NOTE_A5, NOTE_B5,
-  NOTE_A5, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4,
-  NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_B5, NOTE_A5, NOTE_FS4, NOTE_GS4,
-  NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4,
-  NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_B5, NOTE_A5, NOTE_FS4, NOTE_GS4,
-  NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4,
-  NOTE_CS4, NOTE_FS4, NOTE_GS4, NOTE_A5, NOTE_GS4, NOTE_FS4, NOTE_A5,
-  NOTE_FS4, NOTE_A5, NOTE_B5, NOTE_CS5, NOTE_B5, NOTE_A5, NOTE_B5,
-  NOTE_E4, NOTE_GS4, NOTE_A5, NOTE_B5,
-  NOTE_E4, NOTE_GS4, NOTE_A5, NOTE_B5,
-  NOTE_A5, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_FS4,
-  //last Melody 
-  NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_A5, NOTE_B5, NOTE_CS5,
-  NOTE_D5, NOTE_CS5, NOTE_B5, NOTE_A5, NOTE_GS4, NOTE_A5,
-  NOTE_B5, NOTE_A5, NOTE_GS4, NOTE_E4, NOTE_E4,
-  
-  NOTE_CS4, NOTE_D4, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_GS4, NOTE_FS4,
-  NOTE_E4, NOTE_FS4, NOTE_GS4, NOTE_A5, NOTE_B5, NOTE_CS5,
-  NOTE_D5, NOTE_CS5, NOTE_B5, NOTE_A5, NOTE_GS4, NOTE_A5,
-  NOTE_B5, NOTE_A5, NOTE_GS4, NOTE_E4, NOTE_E4,
-  NOTE_CS4, NOTE_D4, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_E4
+  NOTE_E4, NOTE_FS4, NOTE_G4, NOTE_FS4, NOTE_G4, NOTE_A5, NOTE_G4, NOTE_FS4, NOTE_B5,
+  NOTE_G4, NOTE_FS4,NOTE_G4, NOTE_FS4, NOTE_E4
 };
 
 // note durations: 4 = quarter note, 8 = eighth note, etc.:
 int noteDurations[] = {
-  8,8,8,8, 8, 8, 4,
-  8,8,8,8, 8, 8, 4,
-  8,8,8,8,
-  8,8,8,8, //22
-  8,8,8,8, 8, 8, 4,
-  8,8,8,8, 10, 8, 8, 4, //37
-  8,8,8,8,8,16,8,8,8,4, //47
-  4,4,4,4,8,4,4,2, //55
-  4,4,4,4,4,12,4,4,4,6, // 65
-  8,8,8,8, 8, 8, 4, // 72
-  8,8,8,8, 8, 8, 4, // 79
-  8,8,8,8,
-  8,8,8,8, // 87
-  8,8,8,8,8,8,1, // 94
-
-  // last melody
-  8,8,8,8,8,2, //100
-  8,8,8,8,8,2, //106
-  8,8,8,8,8, // 112
-  
-  8,4,8,4,8,8,8, // 120
-  8,8,8,8,8,2, 
-  8,8,8,8,8,2, //132
-  8,8,8,8,8, //137
-  8,4,8,4,8,8,8,1
-  
-  
+  10,10,10,10,10,10,10,10,5,
+  10,10,10,10,4
 };
 
 void setup() {
-  // iterate over the notes of the melody:
-  for (int thisNote = 0; thisNote < 145; thisNote++) {
+}
+
+
+void loop() {
+  for (int thisNote = 0; thisNote < 14; thisNote++) {
 
     // to calculate the note duration, take one second divided by the note type.
     //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
@@ -168,10 +124,4 @@ void setup() {
     // stop the tone playing:
     noTone(ConfigPiezzoPin);
   }
-}
-
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
 }
