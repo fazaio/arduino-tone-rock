@@ -1,5 +1,6 @@
 /*************************************************
- * Public Constants
+ * Iron maiden - Afraid To Shoot Stranger (Short Melody)
+ * Visit: https://github.com/fazaio/arduino-tone
  *************************************************/
 
 #define NOTE_B0  31
@@ -39,19 +40,19 @@
 #define NOTE_A3  220
 #define NOTE_AS3 233
 #define NOTE_B3  247
-#define NOTE_C4  262 // 1
+#define NOTE_C4  262
 #define NOTE_CS4 277
-#define NOTE_D4  294 // 2
+#define NOTE_D4  294
 #define NOTE_DS4 311
-#define NOTE_E4  330 // 3
-#define NOTE_F4  349 // 4
+#define NOTE_E4  330
+#define NOTE_F4  349
 #define NOTE_FS4 370
-#define NOTE_G4  392 // 5
+#define NOTE_G4  392
 #define NOTE_GS4 415
-#define NOTE_A4  440 // 6
-#define NOTE_AS4 466 
-#define NOTE_B4  494 // 7
-#define NOTE_C5  523 // 1b
+#define NOTE_A4  440 
+#define NOTE_AS4 466
+#define NOTE_B4  494
+#define NOTE_C5  523
 #define NOTE_CS5 554
 #define NOTE_D5  587
 #define NOTE_DS5 622
@@ -91,6 +92,7 @@
 #define NOTE_CS8 4435
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
+#define ConfigPiezzoPin 8
 
 int melody[] = {
   NOTE_CS4, NOTE_FS4, NOTE_GS4, NOTE_A4, NOTE_GS4, NOTE_FS4, NOTE_A4,
@@ -135,14 +137,14 @@ void setup() {
     // to calculate the note duration, take one second divided by the note type.
     //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
     int noteDuration = 1000 / noteDurations[thisNote];
-    tone(8, melody[thisNote], noteDuration);
+    tone(ConfigPiezzoPin, melody[thisNote], noteDuration);
 
     // to distinguish the notes, set a minimum time between them.
     // the note's duration + 30% seems to work well:
     int pauseBetweenNotes = noteDuration * 1.30;
     delay(pauseBetweenNotes);
     // stop the tone playing:
-    noTone(8);
+    noTone(ConfigPiezzoPin);
   }
 }
 
