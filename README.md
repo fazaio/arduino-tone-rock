@@ -1,7 +1,7 @@
 # arduino-tone
 [![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fazaio/arduino-tone/)
-----
+
 ## Intro
 <b>Let's Rock</b> 🤘 🎼 <br>
 This project mostly covers solo guitar rock songs to simple arduino tones.
