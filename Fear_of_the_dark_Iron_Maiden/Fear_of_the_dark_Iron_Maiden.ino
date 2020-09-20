@@ -96,17 +96,19 @@
 
 int melody[] = {
   NOTE_D4, NOTE_A3, NOTE_A3, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,NOTE_D4, NOTE_E4, NOTE_E4, NOTE_C4,
-  NOTE_G3,NOTE_G3,NOTE_C4,NOTE_C4,NOTE_D4,NOTE_D4,NOTE_E4,NOTE_E4,NOTE_D4,NOTE_D4,NOTE_C4,NOTE_C4,NOTE_E4,NOTE_C4,NOTE_D4
+  NOTE_G3,NOTE_G3,NOTE_C4,NOTE_C4,NOTE_D4,NOTE_D4,NOTE_E4,NOTE_E4,NOTE_D4,NOTE_D4,NOTE_C4,NOTE_C4,NOTE_E4,NOTE_C4,NOTE_D4,
+  NOTE_A3, NOTE_A3, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,NOTE_D4, NOTE_E4, NOTE_E4, NOTE_C4,
 };
 
 // note durations: 4 = quarter note, 8 = eighth note, etc.:
 int noteDurations[] = {
   4,8,8,8,8,8,8,8,8,8,8,8,8,8,8,5,
-  8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+  8,8,8,8,8,8,8,8,8,8,8,8,8,8,5,
+  8,8,8,8,8,8,8,8,8,8,8,8,8,8,5
 };
 
 void setup() {
-    for (int thisNote = 0; thisNote < 32; thisNote++) {
+    for (int thisNote = 0; thisNote < 47; thisNote++) {
 
     // to calculate the note duration, take one second divided by the note type.
     //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
