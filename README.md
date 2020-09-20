@@ -17,6 +17,8 @@ Define tone based on official arduino tone melody
 ### Iron Maiden
 
 * [Afraid To Shoot Stranger](https://github.com/fazaio/arduino-tone/blob/master/Afraid-to-shoot-stranger-Iron-Maiden/Afraid-to-shoot-stranger-Iron-Maiden.ino) (Guitar Melody only)
+* [Fear Of The Dark](https://github.com/fazaio/arduino-tone/blob/master/Fear_of_the_dark_Iron_Maiden/Fear_of_the_dark_Iron_Maiden.ino) (On process)
+* [Hallowrd Be Thy Name](https://github.com/fazaio/arduino-tone/blob/master/Hallowed_Be_Thy_Name_-_Iron_Maiden/Hallowed_Be_Thy_Name_-_Iron_Maiden.ino) (On Process)
 
 ## Copyright
 
